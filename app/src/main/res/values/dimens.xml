@@ -5,4 +5,5 @@
     <dimen name="textsize">8sp</dimen>
     <dimen name= "contentsize">18sp</dimen>
     <dimen name="titlesize">20sp</dimen>
+    <dimen name="welcomesize">26sp</dimen>
 </resources>

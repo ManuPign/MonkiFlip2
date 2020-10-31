@@ -26,12 +26,12 @@ public class Mensaje {
         this.id = id;
     }
 
-    public String getCorreo() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCorreo(String correo) {
-        this.categoria = correo;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public String getAsunto() {
@@ -50,12 +50,12 @@ public class Mensaje {
         this.contenido = contenido;
     }
 
-    public String getColor() {
+    public String getEnlaceImagen() {
         return enlaceImagen;
     }
 
-    public void setColor(String color) {
-        this.enlaceImagen = color;
+    public void setEnlaceImagen(String enlaceImagen) {
+        this.enlaceImagen = enlaceImagen;
     }
 
     public Mensaje(int id, String remitente, String correo, String asunto, String contenido, String color) {
@@ -65,5 +65,9 @@ public class Mensaje {
         this.asunto = asunto;
         this.contenido = contenido;
         this.enlaceImagen = color;
+    }
+
+    public Mensaje() {
+
     }
 }

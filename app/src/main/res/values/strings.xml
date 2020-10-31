@@ -5,7 +5,13 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="nuevoenmonkeyflip">¿Nuevo en Monkey Flip? ¡Bienvenido!</string>
+    <string name="registratedebajo">Registrate debajo...</string>
+    <string name="nuevoprod">NUEVO PRODUCTO</string>
     <string name="welcome">"Welcome !"</string>
+    <string name="ramiro">"Ramiro Manuel Pignol"</string>
+    <string name="ites">"Ites 2020"</string>
+    <string name="derechos">"Todos los derechos e izquierdos reservados"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
@@ -13,8 +19,20 @@
     <color name="lightgray">#999999</color>
     <color name="white">#FFFFFF</color>
     <color name="darkgray">#666666</color>
-
-
+    <string-array name="categorias">
+        <item>Alimentos</item>
+        <item>Computacion</item>
+        <item>Ejercicio</item>
+        <item>Inmuebles</item>
+        <item>Instrumentos</item>
+        <item>Vehiculos</item>
+    </string-array>
+    <string name="precioprod">"Precio producto"</string>
+    <string name="nombreprod">"Nombre producto"</string>
+    <string name="enlaceprod">"Enlace imagen"</string>
+    <string name="descprod">"Descripcion Producto"</string>
+    <string name="ATRAS">"ATRAS"</string>
+    <string name="tienesparaofrecer">"¿Qué tienes para ofrecerle a la comunidad?"</string>
 
 
 </resources>

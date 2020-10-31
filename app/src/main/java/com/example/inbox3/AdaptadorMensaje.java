@@ -60,9 +60,9 @@ public class AdaptadorMensaje extends BaseAdapter {
 
         asunto.setText(mensaje.getAsunto());
         preview.setText(previewR+"...");
-        remitente.setText(mensaje.getRemitente() + " ("+mensaje.getCorreo()+")");
+        remitente.setText(mensaje.getRemitente() + " ("+mensaje.getCategoria()+")");
         asunto.setTypeface(boldTypeface);
-        Picasso.get().load(mensaje.getColor()).into(avatar);
+        Picasso.get().load(mensaje.getEnlaceImagen()).into(avatar);
        /* switch(letraInicio){
             case "Mani por kilo":
                 Picasso.get().load("https://http2.mlstatic.com/D_NQ_NP_877277-MLA31116283067_062019-O.jpg").into(avatar);
