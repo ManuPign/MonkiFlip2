@@ -42,9 +42,9 @@ public class NuevoprodActivity extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.categorias, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+
         categoria.setAdapter(adapter);
 
         nuevoprodatras.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +93,9 @@ public class NuevoprodActivity extends AppCompatActivity {
         toast1.show();
 
 
+
         BASE1.close();
+        finish();
 
 
 

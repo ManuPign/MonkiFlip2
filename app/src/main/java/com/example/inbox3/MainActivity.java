@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         this.ctx = getApplicationContext();
         casillaCorreo = findViewById(R.id.casillaCorreo);
         Button botondelog = findViewById(R.id.button);
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView monkeflip = findViewById(R.id.about);
         Button actualizar = findViewById(R.id.button3);
         Picasso.get().load("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/27dbbda7-320b-488b-b8cb-6d993296f095/dd8pi7n-536567bc-376b-4fe8-9747-21d2a26e0f9f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMjdkYmJkYTctMzIwYi00ODhiLWI4Y2ItNmQ5OTMyOTZmMDk1XC9kZDhwaTduLTUzNjU2N2JjLTM3NmItNGZlOC05NzQ3LTIxZDJhMjZlMGY5Zi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.W9xZHquYBuyVllogXu3-G9ZC8umh2CkOJSb_IfFymBg").into(monkeflip);
-
+        registerForContextMenu(casillaCorreo);
         botondelog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
         actualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                adaptador.notifyDataSetChanged();
                 cargarSqlite();
+
             }
         });
 
@@ -109,7 +116,28 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        private void cargarSqlite(){
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.seleccion, menu);
+        menu.setHeaderTitle("Seleccione");
+    }
+
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getItemId()==R.id.borrar){
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+            int listPosition = info.position;
+            int aBorrar = listaMensaje.get(listPosition).getId();
+            Toast.makeText(getApplicationContext(),"Borrando..." + aBorrar,Toast.LENGTH_LONG).show();
+            sqliteHelper.DeleteProducto(aBorrar);
+        } else{
+            return false;
+        }
+        return true;
+    }
+
+    private void cargarSqlite(){
             sqliteHelper = new SqliteHelper(this.ctx);
             BASE1 = sqliteHelper.getReadableDatabase();
             listaMensaje.clear();
@@ -144,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
             // cerramos conexion SQLite
             BASE1.close();
+
 
         }
 

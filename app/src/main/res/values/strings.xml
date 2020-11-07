@@ -10,11 +10,15 @@
     <string name="nuevoprod">NUEVO PRODUCTO</string>
     <string name="welcome">"Welcome !"</string>
     <string name="ramiro">"Ramiro Manuel Pignol"</string>
-    <string name="ites">"Ites 2020"</string>
+    <string name="ites">"Ites 2020 Programacion Movil"</string>
     <string name="derechos">"Todos los derechos e izquierdos reservados"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
+    <string name="recuperar">Recuperar usuario</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="FORGOT">"Olvide contrasenia"</string>
+    <string name="OlvidasteContrasenia">Olvidaste tu contrasenia? Ingresa tu ID debajo para recuperar los datos de tu cuenta</string>
+
     <color name="black">#000000</color>
     <color name="lightgray">#999999</color>
     <color name="white">#FFFFFF</color>
@@ -26,6 +30,9 @@
         <item>Inmuebles</item>
         <item>Instrumentos</item>
         <item>Vehiculos</item>
+    </string-array>
+    <string-array name="contextmenu">
+        <item>Delete</item>
     </string-array>
     <string name="precioprod">"Precio producto"</string>
     <string name="nombreprod">"Nombre producto"</string>

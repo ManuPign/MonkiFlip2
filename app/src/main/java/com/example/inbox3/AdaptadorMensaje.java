@@ -53,8 +53,15 @@ public class AdaptadorMensaje extends BaseAdapter {
         TextView asunto = view.findViewById(R.id.asunto);
         TextView preview = view.findViewById(R.id.preview);
         TextView remitente = view.findViewById(R.id.remitente);
-        String previewR = mensaje.getContenido().substring(0,50);
-        String letraInicio = mensaje.getRemitente();
+        String fullcontenido = mensaje.getContenido();
+        String previewR;
+
+        if (fullcontenido.length() >= 50) {
+            previewR = mensaje.getContenido().substring(0, 50);
+        } else {
+            previewR = mensaje.getContenido();
+        }
+
 
 
 

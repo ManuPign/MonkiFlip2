@@ -30,13 +30,14 @@
         android:layout_width="298dp"
         android:layout_height="67dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Usuario"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/contraseniaregister"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline12"
-        app:layout_constraintVertical_bias="0.362" />
+        app:layout_constraintVertical_bias="0.311" />
 
     <EditText
         android:id="@+id/contraseniaregister"
@@ -44,11 +45,12 @@
         android:layout_height="67dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="Contrasenia"
+        android:inputType="textPassword"
 
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -60,13 +62,15 @@
 
     <Button
         android:id="@+id/botonregistrarse"
-        android:layout_width="163dp"
-        android:layout_height="97dp"
+        android:layout_width="169dp"
+        android:layout_height="77dp"
         android:text="REGISTRARSE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toTopOf="@+id/guideline13" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        app:layout_constraintVertical_bias="0.152" />
 
     <Button
         android:id="@+id/atrasregister"
@@ -120,5 +124,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="161dp" />
+
+    <Button
+        android:id="@+id/forgotRegister"
+        android:layout_width="169dp"
+        android:layout_height="77dp"
+        android:text="@string/FORGOT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toBottomOf="@+id/botonregistrarse"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

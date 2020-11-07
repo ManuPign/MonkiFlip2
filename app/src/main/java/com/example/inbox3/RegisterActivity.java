@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         ImageView imagenregister = findViewById(R.id.imagenregister);
         final EditText usuarioregister = findViewById(R.id.usuarioregister);
         final EditText contraseniaregister = findViewById(R.id.contraseniaregister);
+        Button forgotRegister = findViewById(R.id.forgotRegister);
         Button atrasregister = findViewById(R.id.atrasregister);
         Button botonregistrarse = findViewById(R.id.botonregistrarse);
         TextView bienvenida1 = findViewById(R.id.bienvenida1);
@@ -46,6 +48,15 @@ public class RegisterActivity extends AppCompatActivity {
         atrasregister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
+                // Do something in response to button click
+            }
+        });
+
+        forgotRegister.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(RegisterActivity.this, activity_forgot.class);
+                startActivity(i);
+
                 // Do something in response to button click
             }
         });

@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.inbox3.models.Mensaje;
+
 public class SqliteHelper extends SQLiteOpenHelper {
 
     private SqliteHelper sqliteHelper;
@@ -59,6 +61,14 @@ public class SqliteHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreateUsuarios);
 
     }
+
+    public void DeleteProducto(int id1)
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.delete("Publicaciones", "id" + "=" + id1, null);
+        db.close();
+    }
+
 
 
 
